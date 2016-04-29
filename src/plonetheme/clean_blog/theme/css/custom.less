@@ -1,0 +1,42 @@
+body {
+	background-color: #ffffff !important;
+}
+
+body:not(.frontend) {
+	span.label {
+		color: #333;
+	}
+
+	footer {
+		.fa-lg {
+    		font-size: 1.85em !important;
+    	}
+	}
+}
+
+body.frontend {
+	article#content {
+		margin-bottom: 30px;
+	}
+
+	.main-container {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	@media (max-width: 768px) {
+		.no-padding {
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+		}
+	}
+}
+
+body.template-login_form #content-core, 
+body.template-logged_out #content-core {
+	max-width: 500px;
+}
+
+.alert-warning {
+	background-color: rgba(0, 0, 0, 0);
+	border-color: rgba(0, 0, 0, 0);
+}
