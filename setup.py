@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='plonetheme.clean-blog',
-    version='1.0a1',
+    version='0.1',
     description="An installable theme for Plone 5",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -30,7 +30,7 @@ setup(
     keywords='Python Plone',
     author='Andre Goncalves',
     author_email='andre@intk.com',
-    url='https://pypi.python.org/pypi/plonetheme.clean-blog',
+    url='https://github.com/collective/plonetheme.clean-blog',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['plonetheme'],
