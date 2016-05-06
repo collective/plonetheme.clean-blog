@@ -17,7 +17,7 @@ require([
   // initialize only if we are in top frame
   if (window.parent === window) {
     $(document).ready(function() {
-      $('body').addClass('tango-main');
+      $('body').addClass('clean-blog-main');
     });
   }
 

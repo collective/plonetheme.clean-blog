@@ -1,5 +1,6 @@
 body {
 	background-color: #ffffff !important;
+	overflow-x: hidden;
 }
 
 body:not(.frontend) {
@@ -14,19 +15,40 @@ body:not(.frontend) {
 	}
 }
 
+.plone-toolbar-left-expanded nav.navbar-default {
+    padding-left: 120px;
+}
+
+@media (max-width: 769px) {
+	.plone-toolbar-left-expanded nav.navbar-default {
+	    padding-left: 0;
+	}
+}
+
 body.frontend {
 	article#content {
 		margin-bottom: 30px;
 	}
 
-	.main-container {
-		padding-left: 0px !important;
-		padding-right: 0px !important;
+	.no-padding {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
+
+	.no-margin {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
 	@media (max-width: 768px) {
 		.no-padding {
-			padding-left: 0px !important;
-			padding-right: 0px !important;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		.no-margin {
+			margin-left: 0px;
+			margin-right: 0px;
 		}
 	}
 }

@@ -101,23 +101,19 @@
             <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
           </xsl:variable>
 
-          <div class="{$central}">
-            <div class="row">
-              <div class="box">
+          <div class="{$central} no-padding">
+            <div class="row no-margin">
                 <div class="col-xs-12 col-sm-12 no-padding">
                   <xsl:apply-templates css:select="#content" />
                 </div>
                 <div class="clearfix"></div>
-              </div>
             </div>
             
             <section id="viewlet-below-content-body" class="row">
-              <div class="box">
                 <div class="col-xs-12 col-sm-12 no-padding">
                  <xsl:copy-of css:select="#viewlet-below-content" />
                 </div>
                 <div class="clearfix"></div>
-              </div>
             </section>
 
           </div><!--/row-->
