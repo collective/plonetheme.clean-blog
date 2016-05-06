@@ -21,7 +21,7 @@ This theme can be seen in action at the following sites:
 - Clean Blog `clean-blog.intk.com <http://clean-blog.intk.com>`_.
 
 
-Source Code and Contribution
+Installation
 ============================
 
 Install plonetheme.clean-blog by adding it to your buildout::
