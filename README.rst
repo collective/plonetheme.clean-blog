@@ -15,8 +15,26 @@ Documentation
 
 Examples
 =============
+
 This theme can be seen in action at the following sites:
+
 - Clean Blog `clean-blog.intk.com <http://clean-blog.intk.com>`_.
+
+
+Source Code and Contribution
+============================
+
+Install plonetheme.clean-blog by adding it to your buildout::
+
+    [buildout]
+
+    ...
+
+    eggs =
+        plonetheme.clean-blog
+
+
+and then running ``bin/buildout``
 
 
 Source Code and Contribution
