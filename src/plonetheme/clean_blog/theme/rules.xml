@@ -7,6 +7,7 @@
 
 
     <theme href="backend.html" css:if-not-content="body.frontend"/>
+    <theme href="post.html" css:if-content="body.frontend.portaltype-news-item"/>
     <theme href="index.html" css:if-content="body.frontend"/>
 
     <notheme css:if-not-content="#visual-portal-wrapper" />
@@ -60,6 +61,10 @@
         css:content-children=".documentFirstHeading"
         method="raw" />
       <replace
+        css:theme-children=".post-title"
+        css:content-children=".documentFirstHeading"
+        method="raw" />
+      <replace
         css:theme-children=".documentFirstHeading"
         css:content-children=".documentFirstHeading"
         method="raw" />
@@ -80,6 +85,14 @@
       <!-- Header -->
       <copy attributes="style" css:theme="header.intro-header" css:content="div.leadImageBackground"/>
       <drop css:content="div.leadImage"/>
+
+      <!-- Post author / dates -->
+      <replace
+        css:theme-children="#author-container"
+        css:content-children="#author-container"
+        />
+
+      <drop css:content="#author-container"/>
 
       <!-- full-width breadcrumb -->
       <!-- No breadcrumbs in this theme -->
