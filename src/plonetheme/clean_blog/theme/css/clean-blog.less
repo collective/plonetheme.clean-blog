@@ -54,30 +54,34 @@ body.frontend {
 	// Post Preview Pages
 
 	.post-preview {
-		> a {
+		/* 	To make sure we dont need to link 
+			the description to a post */
+		.post-subtitle {
+			margin: 0;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+
+		a {
 			color: @gray-dark;
 			&:hover,
 			&:focus {
 				text-decoration: none;
 				color: @brand-primary;
 			}
-			> .post-title {
+			.post-title {
 				font-size: 30px;
 				margin-top: 30px;
 				margin-bottom: 10px;
 			}
-			> .post-subtitle {
-				margin: 0;
-				font-weight: 300;
-				margin-bottom: 10px;
-			}
+			
 		}
-		> .post-meta {
+		.post-meta {
 			color: @gray;
 			font-size: 18px;
 			font-style: italic;
 			margin-top: 0;
-			> a {
+			a {
 				text-decoration: none;
 				color: @gray-dark;
 				&:hover,
@@ -88,8 +92,8 @@ body.frontend {
 			}
 		}
 		@media only screen and (min-width: 768px) {
-			> a {
-				> .post-title {
+			a {
+				.post-title {
 					font-size: 36px;
 				}
 			}
@@ -184,7 +188,7 @@ body.frontend {
 
 	// Pager Styling
 	.pager {
-		margin: 20px 0 0;
+		margin: 0px 0 0;
 
 		li {
 			> a,
@@ -203,7 +207,7 @@ body.frontend {
 			> a:focus {
 				color: white;
 				background-color: @brand-primary;
-				border: 1px solid @brand-primary;
+				border: 1px solid @brand-primary !important;
 			}
 		}
 

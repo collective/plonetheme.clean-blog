@@ -65,6 +65,25 @@ body.frontend {
 	.section-heading {
 		font-weight: 700 !important;
 	}
+
+	#content article.entry::after,
+	.entries::before {
+  		height: 0px;
+	}
+
+	.pager li.active span {
+		background-color: #0085a1;
+		border: 1px solid #0085a1 !important;
+	}
+
+	.pagination {
+		margin: 0px 0 0;
+		float: right;
+	}
+}
+
+body.frontend.template-listing_view article#content {
+	margin-bottom: 0px;
 }
 
 body.template-login_form #content-core, 
