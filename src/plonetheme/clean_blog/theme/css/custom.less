@@ -80,6 +80,73 @@ body.frontend {
 		margin: 0px 0 0;
 		float: right;
 	}
+
+	#content-core a {
+  		border-bottom: 0px;
+	}
+
+	.formControls {
+	    border-top: 0px;
+	    background: #ffffff;
+	    padding-top: 0px;
+	    padding-bottom: 0px;
+	    box-shadow: none;
+	}
+
+	.form-group .field {
+		margin-bottom: 0px;
+	}
+
+	.help-block {
+    	margin-top: 5px;
+    	margin-bottom: 10px;
+	}
+
+
+
+	.floating-label-form-group label {
+		line-height: 1.761705882em;
+	}
+
+	.floating-label-form-group {
+		label span.required {
+			visibility: hidden;
+		}
+
+		.field.error {
+	    	background: #ffffff;
+	    	-webkit-box-shadow: 0 0 0 0px #ffffff;
+	    	box-shadow: 0 0 0 0px #ffffff;
+	    	color: #a94442;
+    	}
+
+    	textarea {
+    		height: auto;
+    		min-height: auto;
+    	}
+
+    	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+			color: #999999;
+		}
+
+		input:-moz-placeholder, textarea:-moz-placeholder { /* Firefox 18- */
+		   color: #999999;  
+		}
+
+		input::-moz-placeholder, textarea::-moz-placeholder {  /* Firefox 19+ */
+		   color: #999999;  
+		}
+
+		input:-ms-input-placeholder, textarea:-ms-input-placeholder {  
+		   color: #999999;  
+		}
+    }
+}
+
+body.frontend.section-contact {
+	article#content {
+		margin-bottom: 0px;
+	}
 }
 
 body.frontend.template-listing_view article#content {
@@ -95,3 +162,12 @@ body.template-logged_out #content-core {
 	background-color: rgba(0, 0, 0, 0);
 	border-color: rgba(0, 0, 0, 0);
 }
+
+body.template-default_error_message #content-core p {
+    white-space: initial;
+}
+
+#formfolder-base-edit .field {
+	width: auto;
+}
+

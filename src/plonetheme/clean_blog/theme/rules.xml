@@ -7,6 +7,7 @@
 
 
     <theme href="backend.html" css:if-not-content="body.frontend"/>
+    <theme href="contact.html" css:if-content="body.frontend.portaltype-formfolder"/>
     <theme href="post.html" css:if-content="body.frontend.portaltype-news-item"/>
     <theme href="index.html" css:if-content="body.frontend"/>
 
