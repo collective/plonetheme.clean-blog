@@ -80,7 +80,7 @@
       <!-- viewlet-above-content -->
       <replace
         css:theme-children="#above-content"
-        css:content-children="#viewlet-above-content"
+        css:content-children="#viewlet-above-content-title"
         />
 
       <!-- Header -->
