@@ -83,6 +83,13 @@
         css:content-children="#viewlet-above-content-title"
         />
 
+      <replace
+        css:theme-children="#slickslideshow"
+        css:content-children="#slickslideshow"
+      />
+
+      <drop css:content="#slickslideshow"/>
+
       <!-- Header -->
       <copy attributes="style" css:theme="header.intro-header" css:content="div.leadImageBackground"/>
       <drop css:content="div.leadImage"/>
