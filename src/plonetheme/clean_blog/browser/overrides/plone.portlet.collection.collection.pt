@@ -1,0 +1,80 @@
+<section class="portlet portletCollection"
+    i18n:domain="plone"
+    tal:define="collection_url view/collection_url;
+                collection_item view/collection;
+                plone_view context/@@plone;
+                toLocalizedTime nocall:plone_view/toLocalizedTime;
+                viewActions python:context.portal_registry.get('plone.types_use_view_action_in_listings', []);"
+    tal:attributes="class string:portlet portletCollection ${view/css_class}"><header class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href collection_url" tal:omit-tag="not:view/data/show_more">
+            <h1 tal:content="view/data/header"></h1>
+        </a>
+        <h2 tal:content="collection_item/Description"></h2>
+        <span class="portletTopRight"></span>
+  </header>
+
+
+  <div class="container-fluid" id="row-items">
+    <tal:events tal:repeat="obj view/results">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
+        tal:define="plone_view context/@@plone;
+                    oddrow repeat/obj/odd;
+                    useView python:obj.portal_type in viewActions;
+                    itemUrl python:useView and obj.getURL() + '/view' or obj.getURL();
+                    item_wf_state obj/review_state;
+                    has_media nocall:obj/leadMedia;
+                    item_wf_state_class python:'state-' + plone_view.normalizeString(item_wf_state);
+                    item_type obj/portal_type;
+                    item_type_class python:'contenttype-' + plone_view.normalizeString(item_type);
+                    item_obj python:obj.getObject();
+                    number repeat/obj/number;"
+        >
+        <div class="thumb-wrapper">         
+          <a class="thumb-image" tal:condition="python: ((has_media != None and has_media != '' and 'Missing' not in str([has_media])) or item_type == 'Image')" href="" tal:attributes="href python: itemUrl"
+            tal:define="item_img python:view.getImageObject(obj)">
+            <img tal:define="images_src python:item_img;
+                               "
+                   src="" alt=""
+                   tal:attributes="src images_src; class python:'tileImage'; alt obj/Title; title obj/Title;" /> 
+          </a> 
+        </div>
+
+        <div class="caption">
+            <h3>
+              <a href="#"
+               tal:attributes="href itemUrl;"
+               tal:content="obj/Title"
+               >
+              Title
+              </a>
+          </h3>
+          <p tal:content="obj/Description"></p>
+        </div>
+
+    </div>
+    <tal:clearfix condition="python: number % 3 == 0" tal:define="number repeat/obj/number">
+        <div class="clearfix visible-lg visible-md"></div>
+      </tal:clearfix> 
+
+      <tal:clearfixmd condition="python: number % 2 == 0" tal:define="number repeat/obj/number">
+        <div class="clearfix visible-sm"></div>
+      </tal:clearfixmd>
+    </tal:events>
+  </div>
+  <div class="clearfix"></div>
+    <footer class="portletFooter"
+            tal:condition="python:showMore or view.include_empty_footer()"
+            tal:define="showMore view/data/show_more">
+        <span class="portletBottomLeft"></span>
+        <span tal:condition="showMore">
+        <a tal:attributes="href collection_url">
+           <span class="hiddenStructure"><span tal:replace="view/data/header" /> - </span>
+           <input i18n:translate="more_url" class="btn btn-default" value="More&hellip;"/>
+        </a>
+        </span>
+        <span class="portletBottomRight"></span>
+  </footer>
+
+</section>
